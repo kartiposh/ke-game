@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var itemInfo = {
+                'gold' : {
+                    'mass' : 12,
+                    'value' : 1000,
+                },
+            };
+
+            function sendItem(itemEl) {
+                var oldMoneyEarned = parseInt(document.getElementById('money-earned').innerHTML);
+                var newMoneyEarned = oldMoneyEarned + itemInfo[itemEl.id].value;
+                document.getElementById('money-earned').innerHTML = newMoneyEarned;
+                itemEl.disabled = true;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>My Game</h1>
+        <button id="gold" onclick="sendItem(this)">
+            <div>Gold</div>
+            <div>Mass: 12kg</div>
+            <div>Value: $1000</div>
+        </button>
+
+        <div>
+            <div>
+                Money earned: $<span id="money-earned">0</span>
+            </div>
+            <div>
+                Time remaining: <span id="time-remaining">3000</span> seconds
+            </div>
+            <div>
+                Energy remaining: <span id="energy remaining">10000</span> J
+            </div>
+        </div>
+    </body>
+</html>
